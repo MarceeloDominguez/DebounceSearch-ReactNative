@@ -8,11 +8,22 @@ const Stack = createNativeStackNavigator();
 export default function Navigation() {
   return (
     <Stack.Navigator
-      screenOptions={{ headerTransparent: true, headerTitle: "" }}
+      screenOptions={{
+        headerTransparent: true,
+        headerTitle: "",
+        headerTintColor: "#EDE4E0",
+        contentStyle: {
+          backgroundColor: "#1B2430",
+        },
+      }}
       initialRouteName="SearchPokemon"
     >
       <Stack.Screen name="SearchPokemon" component={SearchPokemon} />
-      <Stack.Screen name="DetailsPokemon" component={DetailsPokemon} />
+      <Stack.Screen
+        name="DetailsPokemon"
+        component={DetailsPokemon}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 }
